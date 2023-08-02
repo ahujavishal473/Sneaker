@@ -1,0 +1,15 @@
+.data{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .card{
+    height: 550px;
+    width: 300px;
+    margin:25px;
+  }
+  .p{
+    height: 300px;
+    width: 300px; 
+  }

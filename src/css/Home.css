@@ -1,0 +1,55 @@
+.photo{
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url("https://images.pexels.com/photos/1240892/pexels-photo-1240892.jpeg");
+    background-size: 100% 800px;
+    height: 800px;
+    width: 100%;
+    opacity:0.85;
+
+}
+.photo p{
+    font-size: 50px;
+    color: white;
+    
+}
+.left{
+    display: flex;
+    flex-wrap: wrap;
+    position:absolute;
+    font-size: 60px;
+    height: 500px;
+    width: 500px;
+    margin: 100px 150px;
+}
+.btn{
+    color:black;
+    font-size: 25px;
+    font-weight: bolder
+
+}
+.btn:hover{
+    color: brown;
+}
+.data{
+    margin-top: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.card{
+    height: 500px;
+    width: 300px;
+}
+.p{
+   height: 300px;
+   width: 300px; 
+}
+.text{
+    padding: 15px;
+}
+.button1{
+    font-size: 25px;
+    margin-top: 35px;
+    width: 200px;
+}

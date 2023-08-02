@@ -1,8 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import '../App.css';
+import photo from '../images/cover-photo.jpg';
 import { Link } from "react-router-dom";
 import { Carousel } from "react-bootstrap";
+import All from "./All";
+import '../css/Home.css';
 function Home() {
     const [shoesdata,setShoesdata]=useState([]);
 
@@ -16,42 +18,47 @@ function Home() {
     if(!shoesdata){
         return <h1>Loading....</h1>
     }
+    const firstTenItems = shoesdata.slice(0, 4);
+
+   
 
     return(
         <>
-        <Carousel
-        interval={1500}
-        pause="hover"
-        wrap={true}
-        onSlide={(slideIndex) => console.log(`Active Slide: ${slideIndex}`)}
-      >
-        {shoesdata.map((items) => (
-          <Carousel.Item key={items.product_id}>
-            <Link to={`/Details/${items.product_id}`}>
-              <img
-                className="d-block w-100"
-                src={items.product_images}
-                alt={items.product_name}  height="500px" width="500px"
-              />
-            </Link>
-            <Carousel.Caption className="d-none d-md-block">
-              <h3 style={{color:"red"}}>{items.product_name}</h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-        ))}
-      </Carousel>
+        <div className="photo">
+          <div className="left">
+            <p>Your Journey, Your Footwear:<br /> Find the Perfect Match.</p>
+            <Link to={'/Men'}><button className="btn">Shop for Men</button></Link>
+            <Link to={'/Women'}><button className="btn">Shop for Women</button></Link>
+          </div> 
+        </div>
         
-        <div className="App2">
-        {shoesdata.map((shoes)=>(
+          <div className="text"><h1>Our Products</h1></div>
+          <div className="data">
+        {firstTenItems.map((shoes)=>(
             <div className="card" key={shoes.product_id}>
-                <img src={shoes.product_images} alt={shoes.product_name} height="300px" width="400px"/>
+                <img  className="p" src={shoes.product_images} alt={shoes.product_name} height="300px" width="400px"/>
                 <h3 style={{textAlign:"left"}}>{shoes.product_name}</h3>
                 <h3 style={{textAlign:"left"}}>₹{shoes.price}</h3>
                 <div className="btn"><Link to={`Details/${shoes.product_id}`}><button type="submit">More details</button></Link></div>
             </div>
         ))}
+       
+        </div>
+          <div className="explore">
+          <Link to={'/All'}><button className="button1" type="submit">Show More</button></Link> 
+          </div>
 
-        </div></>
+          <div className="brand">
+          <div className="nike">
+          
+          </div>
+          <div className="puma">
+
+          </div>
+        
+          </div>
+        
+      </>
     );
     
 }

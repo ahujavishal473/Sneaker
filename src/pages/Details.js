@@ -25,6 +25,7 @@ function Details() {
                <div className="dproductdetails">
                <h3 style={{textAlign:"left"}}>{details.product_name}</h3>
                 <h3 style={{textAlign:"left"}}>₹{details.price}</h3>
+                <p tyle={{textAlign:"left"}}></p>
                </div>
             </div>
         </>
