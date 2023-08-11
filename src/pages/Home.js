@@ -1,9 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import photo from '../images/cover-photo.jpg';
 import { Link } from "react-router-dom";
-import { Carousel } from "react-bootstrap";
-import All from "./All";
 import '../css/Home.css';
 function Home() {
     const [shoesdata,setShoesdata]=useState([]);
@@ -27,8 +24,8 @@ function Home() {
         <div className="photo">
           <div className="left">
             <p>Your Journey, Your Footwear:<br /> Find the Perfect Match.</p>
-            <Link to={'/Men'}><button className="btn">Shop for Men</button></Link>
-            <Link to={'/Women'}><button className="btn">Shop for Women</button></Link>
+            <Link to={'/Men'}><button className="shop-button">Shop for Men</button></Link>
+            <Link to={'/Women'}><button className="shop-button">Shop for Women</button></Link>
           </div> 
         </div>
         

@@ -1,30 +1,30 @@
 // nav.js
-import React, { useState } from "react";
+import React from "react";
 import '../App.css';
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 
 import './nav.css';
 
 function Nav() {
-  const [ searchtext, setSearchinput ] = useState("");
-   function sendvalue(e){
-   setSearchinput(e.target.value);}
-  const logout = () => {
-    localStorage.clear();
-    window.location.reload();
-  };
+  
+
+   const isAuthenticated = !!localStorage.getItem('token');
+   const navigate = useNavigate();
+ 
+   const handleLogout = () => {
+     localStorage.removeItem('token');
+     localStorage.removeItem('user');
+     
+     navigate('/');
+     alert("you are logout")
+   };
   return (
     <div className="nevigation">
       <div className="head">
        
-      <Link to="/"><p>Sneaker World</p></Link>
+      <Link to="/" className="logo"><p>Sneaker World</p></Link>
       </div>
-      <div className="search">
-      <form>
-        <input  className="mainsearch" type="search" name="search" value={searchtext} onChange={sendvalue}/>
-        <Link to={`/Search/${searchtext}`}><button type="submit">Search</button></Link>
-      </form>  
-      </div>
+     
         
      <div className="link">
        <nav>
@@ -32,24 +32,25 @@ function Nav() {
             <li>
               <Link to="/">Home</Link>
             </li>
-            {/* <li>
-              <Link to="/Men">Men</Link>
-            </li>
-            <li>
-              <Link to="/Women">Women</Link>
-           </li>*/}
+          
             <li> 
             <Link to="/All">Explore</Link>
            </li>
            <li> 
             <Link to="/Cart">Cart</Link>
            </li>
-           <li>
-            <Link to="/Login">Login</Link>
-           </li>
-           {/* <li>
-            <button onClick={logout}>Logout</button>
-           </li> */}
+           {isAuthenticated ? (
+        
+        <button className="logout" type="submit" onClick={handleLogout}>Logout</button>
+      ) : (
+        
+        <>
+      
+          <li><Link to="/signin">Sign In</Link></li>
+          
+        </>
+      )}
+           
           </ul>
         </nav>
      </div>
