@@ -7,7 +7,7 @@ function All() {
 
     useEffect(() => {
         axios
-            .get("http://localhost:3000/api/data")
+            .get("https://baby-blue-scallop-yoke.cyclic.app/api/data")
             .then((response) => {
                 setShoesdata(response.data);
             })
@@ -23,7 +23,7 @@ function All() {
                     <h3 style={{ textAlign: "left" }}>{shoes.product_name}</h3>
                     <h3 style={{ textAlign: "left" }}>₹{shoes.price}</h3>
                     <div className="btn">
-                        {/* <Link to={`Details/${shoes.product_id}`}><button type="submit">More details</button></Link></div> */}
+                    
                         <Link to={`/Details/${shoes.product_id}`}><button type="submit">More details</button></Link>
                     </div>
                 </div>

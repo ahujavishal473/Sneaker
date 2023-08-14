@@ -34,7 +34,7 @@ function Footer() {
                 </div>
             </div>
             <div className="foot">
-                © Copyright 2022 Shoes World. All rights reserved.
+                © Copyright 2022 Sneaker-World. All rights reserved.
             </div>
         </>
     );
