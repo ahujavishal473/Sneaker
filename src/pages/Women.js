@@ -7,7 +7,7 @@ function Women() {
 
     useEffect(()=>{
         axios
-        .get("http://localhost:3000/api/data?g=women")
+        .get("https://baby-blue-scallop-yoke.cyclic.app/api/data?g=women")
         .then((response)=>{
             setShoesdata(response.data);
         })
