@@ -11,8 +11,8 @@ function Women() {
         .then((response)=>{
             setShoesdata(response.data);
         })
-    },[])
-    
+    },[]);
+    //display
 
     return(
         <div className="data">
