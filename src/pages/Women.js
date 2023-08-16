@@ -12,9 +12,7 @@ function Women() {
             setShoesdata(response.data);
         })
     },[])
-    if(!shoesdata){
-        return <h1>Loading....</h1>
-    }
+    
 
     return(
         <div className="data">
