@@ -12,10 +12,13 @@ function Women() {
             setShoesdata(response.data);
         })
     },[]);
-    //display
+    //display 
 
     return(
+        <>
+        <div><center><h1>Women Section</h1></center></div>
         <div className="data">
+          
         {shoesdata.map((shoes)=>(
             <div className="card" key={shoes.product_id}>
                
@@ -27,6 +30,7 @@ function Women() {
         ))}
 
         </div>
+        </>
     );
     
 }

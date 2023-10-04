@@ -17,7 +17,10 @@ function Shoes() {
     }
 
     return(
+        <>
+        <div><h1><center>Men Section</center></h1></div>
         <div className="data">
+         
         {shoesdata.map((shoes)=>(
             <div className="card" key={shoes.product_id}>
                
@@ -29,6 +32,7 @@ function Shoes() {
         ))}
 
         </div>
+        </>
     );
     
 }
