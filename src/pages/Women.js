@@ -16,6 +16,8 @@ function Women() {
 
     return(
         <>
+
+        
         <div><center><h1>Women Section</h1></center></div>
         <div className="data">
           
